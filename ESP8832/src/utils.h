@@ -60,7 +60,7 @@ constexpr const char* ALPHA_NUM = "0123456789ABCDEF";
 String generateAlphaNum(size_t n){
     String result = "";
 
-    randomSeed(analogRead(0) * millis());
+    randomSeed(ESP.getCycleCount() + analogRead(A0));
     
     for(size_t i = 0; i < n; ++i){
         size_t v = (size_t)random(0, 16);

@@ -13,7 +13,7 @@ class MqttAlerter{
     public:
         MqttAlerter() : client(wifiClient), onReconnect(nullptr), onConnectionError(nullptr), onConnectionSuccess(nullptr)
         {
-            randomSeed(analogRead(A0) * micros());
+            randomSeed(ESP.getCycleCount() + analogRead(A0));
         }
 
         void init(String alerterID){
