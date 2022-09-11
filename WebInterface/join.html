@@ -171,7 +171,7 @@
         // ================================================================
 
         var rndID = Math.round(Math.random() * 0xFFFF).toString(16);
-        var client = new Paho.Client("broker.hivemq.com", 8000, "client_DD-alerter_" + "0".repeat(4 - rndID.length) + rndID);
+        var client = new Paho.Client("broker.emqx.io", 8084, "client_DD-alerter_" + "0".repeat(4 - rndID.length) + rndID);
 
         client.onConnectionLost = () => {
             overlay.style.display = "block";
@@ -189,7 +189,8 @@
         function mqtt_reconnect(){
             client.connect({
                 cleanSession: false,
-                reconnect: true
+                reconnect: true,
+                useSSL: true,
             });
         }
 
