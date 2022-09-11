@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>D&D Alerter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.6/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.6/dist/js/uikit.min.js"></script>
+
+    <style>
+        html, body{
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fafafa;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+
+        #join_form_container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="join_form_container">
+        <div id="join_form" class="uk-card uk-card-default uk-card-body">
+            <h1 class="uk-heading-line uk-text-center uk-margin-small-bottom"><span>D&D Alerter</span></h1>
+            <h2 class="uk-margin-small-top">Join a Dungeon</h2>
+            <form action="/join.html" method="GET">
+                <table>
+                    <tr>
+                        <td>ID alerter: </td>
+                        <td><input class="uk-input" type="text" name="id_alerter" placeholder="EF43D, 64985, AD7FE, ..." maxlength="5" /></td>
+                    </tr>
+                    <tr>
+                        <td>Your Name: </td>
+                        <td><input class="uk-input" type="text" name="name" placeholder="(20 char max)" maxlength="20" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input class="uk-button uk-width-1-1 uk-button-primary uk-margin-small-top" type="submit" value="Enter !" /></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html> 
