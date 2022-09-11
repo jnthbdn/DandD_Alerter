@@ -15,7 +15,7 @@ constexpr uint8_t PIN_BUTTON = D4;
 constexpr uint8_t NB_RING_LED = 12;
 constexpr uint8_t PIN_RING_LED = D3;
 // constexpr const char* MQTT_SERVER = "192.168.1.16";
-constexpr const char* MQTT_SERVER = "broker.hivemq.com";
+constexpr const char* MQTT_SERVER = "broker.emqx.io";
 constexpr uint16_t MQTT_PORT = 1883;
 constexpr uint8_t MAX_NAME_LIST_SIZE = 5;
 
@@ -125,19 +125,12 @@ void setup() {
 
   textScroll.speed(10);
 
-  deviceID = generateAlphaNum(5);
-
   runningRing.init();
   runningRing.nbRunningPixels(3);
   runningRing.setColor(255, 255, 255);
   runningRing.allOn();
   
   settings.init();
-
-  mqtt.init(deviceID);
-  mqtt.setOnReconnect(onMqttReconnect);
-  mqtt.setOnConnectionError(onMqttConnectionError);
-  mqtt.setOnConnectionSuccess(onMqttConnectionSuccess);
 
   Wire.setClock(400000);
 
@@ -148,6 +141,12 @@ void setup() {
   if( digitalRead(PIN_BUTTON) == HIGH && tryConnectWiFi(settings.getSSID().c_str(), settings.getPassword().c_str()) ){
     isAP = false;
     runningRing.allOn( Adafruit_NeoPixel::Color(0, 255, 0));
+
+    deviceID = generateAlphaNum(5);
+    mqtt.init(deviceID);
+    mqtt.setOnReconnect(onMqttReconnect);
+    mqtt.setOnConnectionError(onMqttConnectionError);
+    mqtt.setOnConnectionSuccess(onMqttConnectionSuccess);
     mqtt.start(MQTT_SERVER, MQTT_PORT);
 
     ssd.setCursor(0,16);
