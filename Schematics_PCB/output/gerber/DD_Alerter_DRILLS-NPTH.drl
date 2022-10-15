@@ -1,0 +1,22 @@
+M48
+; #@! TF.GenerationSoftware,LibrePCB,LibrePCB,0.1.6
+; #@! TF.CreationDate,2022-09-15T14:24:29
+; #@! TF.ProjectId,D&D Alerter,e525b3f6-46db-4784-bcd4-d1e7e9f5ff90,v1
+; #@! TF.Part,Single
+; #@! TF.SameCoordinates
+; #@! TF.FileFunction,NonPlated,1,2,NPTH
+FMAT,2
+METRIC,TZ
+; #@! TA.AperFunction,MechanicalDrill
+T1C2.9
+%
+G90
+G05
+M71
+T1
+X-10.2Y-21.4
+X10.2Y-21.4
+X10.2Y21.4
+X-10.2Y21.4
+T0
+M30
