@@ -121,7 +121,7 @@ class SettingServer {
                         "<tr><td colspan=\"2\"><br/><input type=\"submit\" value=\"Save Settings\"/></td></tr>"
                         "</table>"
                     "</form>"
-                    "<p>After the <i>alerter</i> is connected to WiFi, go to <a href=\"https://perdu.com/\">https://perdu.com</a>, and follow the instructions.</p>"
+                    "<p>After the <i>alerter</i> is connected to WiFi, go to <a href=\"https://jnthbdn.github.io/DnD_Alerter/\">https://jnthbdn.github.io/DnD_Alerter/</a>, and follow the instructions.</p>"
                     "<div class=\"restart\" onclick=\"location.assign('/restart')\">Restart the D&D Alerter</div>"
                 "</div>"
             "</body>"
