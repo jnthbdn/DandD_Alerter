@@ -134,6 +134,8 @@ void setup() {
 
   Wire.setClock(400000);
 
+  delay(2000);
+
   ssd.setCursor(0,8);
   ssd.print("WiFi connection...");
   ssd.display();
